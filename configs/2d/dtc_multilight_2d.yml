@@ -15,8 +15,8 @@ model:
   img_size: 256
   patch_size: 16
   embed_dim: 192
-  depths: [6, 6, 6, 6]
-  num_heads: [6, 6, 6, 6]
+  depths: [6, 6, 6]
+  num_heads: [6, 6, 6]
   window_size: 8
 
 # loss Parameters
@@ -29,7 +29,7 @@ dataset:
   train:
     type: DTCMultiLight2D
     stage: train
-    data_json: configs/2d/data_json/dtc_multilight/1.json
+    data_json: configs/2d/data_json/dtc_multilight/train.json
     image_size: [256, 256]
     num_context_views: 1
     num_target_views: 1
@@ -48,7 +48,7 @@ dataset:
 training:
   port: 35266
   # dataset Parameters
-  batch_size: 4
+  batch_size: 8
   num_workers: 16
   persistent_workers: true
   
@@ -56,7 +56,7 @@ training:
   max_iterations: 1000000
   grad_accum_steps: 1
   weight_decay: 0.05
-  lr: 1e-4
+  lr: 2e-4
   warmup_steps: 10000
   scheduler_type: cosine
   beta1: 0.9
