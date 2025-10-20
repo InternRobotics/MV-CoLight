@@ -1,0 +1,85 @@
+experiment_name: dtc_multilight_l
+
+log_dir: ./logs
+evaluation: false
+
+use_wandb: false
+wandb_project: 3d_object_compositing
+
+use_amp: true
+amp_dtype: fp16 
+
+# model Parameters
+model2d:
+  type: SwinT2D
+  img_size: 256
+  patch_size: 16
+  embed_dim: 96
+  depths: [6, 6, 6]
+  num_heads: [6, 6, 6]
+  window_size: 8
+
+# model Parameters
+model:
+  type: ObjectCompositing3D 
+  img_size: 256
+  patch_size: 16
+  embed_dim: 96
+  depths: [6, 6, 6]
+  num_heads: [6, 6, 6]
+  window_size: 8
+
+# loss Parameters
+loss:
+  type: Loss3D
+  coef: 0.05
+  render_coef: 0.5
+
+# data Parameters
+dataset:
+  train:
+    type: DTCMultiLight3D
+    stage: train
+    data_json: configs/3d/data_json/dtc_multilight/train.json
+    image_size: [256, 256]
+    num_render_views: 16
+    add_background: true
+    add_depth: true
+    render_2d: true
+  test:
+    type: DTCMultiLight3D
+    stage: test
+    data_json: configs/3d/data_json/dtc_multilight/test.json
+    image_size: [256, 256]
+    num_render_views: 16
+    add_background: true
+    add_depth: true
+    render_2d: true
+    
+training:
+  port: 35266
+  # dataset Parameters
+  batch_size: 1
+  num_workers: 16
+  persistent_workers: true
+  
+  # optim Parameters
+  max_iterations: 200000
+  grad_accum_steps: 1
+  weight_decay: 0.05
+  lr: 3e-4
+  warmup_steps: 10000
+  scheduler_type: cosine
+  beta1: 0.9
+  beta2: 0.95
+  ema_beta: 0.99
+  resume_ckpt: null
+  resume_optimizer: false
+  swint2d_model_path: /cpfs01/user/renkerui/nips25/MVCoLight/checkpoints/2doc.pt
+
+  # Checkpoints Parameters
+  save_interval: 10000
+  vis_every: 1000
+
+  allowed_gradnorm_factor: 100.0
+  grad_clip_norm: 1.0

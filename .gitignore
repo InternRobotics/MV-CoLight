@@ -1,0 +1,14 @@
+data
+logs/
+wandb/
+__pycache__/
+ccv_log/
+temp/
+ckpts/
+test*/
+*.sh
+*/__pycache__/
+.vscode/
+configs/test/
+checkpoints/
+*.pyc

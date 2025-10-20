@@ -1,0 +1,77 @@
+{
+    "simple_sythetic_scene": {
+        "data_root": "/path/to/DTC-MultiLight-2DEval/simple_scenes",
+        "scenes": [
+            "scene_03519",
+            "scene_01011",
+            "scene_01687",
+            "scene_04406",
+            "scene_01870",
+            "scene_02248",
+            "scene_02133",
+            "scene_04562",
+            "scene_04409",
+            "scene_00198",
+            "scene_01694",
+            "scene_00220",
+            "scene_01332",
+            "scene_04715",
+            "scene_03510",
+            "scene_02681",
+            "scene_02866",
+            "scene_02049",
+            "scene_04237",
+            "scene_03930",
+            "scene_02803",
+            "scene_02886",
+            "scene_03914",
+            "scene_00621",
+            "scene_00575",
+            "scene_02818",
+            "scene_03047",
+            "scene_03849",
+            "scene_02372",
+            "scene_03231",
+            "scene_03091",
+            "scene_00255",
+            "scene_02615",
+            "scene_00084",
+            "scene_00151",
+            "scene_02003",
+            "scene_02960",
+            "scene_00642",
+            "scene_01779",
+            "scene_03925",
+            "scene_03352",
+            "scene_00146",
+            "scene_03339",
+            "scene_04369",
+            "scene_00361",
+            "scene_01171",
+            "scene_01012",
+            "scene_00950",
+            "scene_00504",
+            "scene_02228"
+        ]
+    },
+    "complex_sythetic_scene": {
+        "data_root": "/path/to/DTC-MultiLight-2DEval/complex_scenes",
+        "scenes": [
+            "scene_00000",
+            "scene_00001",
+            "scene_00002",
+            "scene_00003",
+            "scene_00004",
+            "scene_00005",
+            "scene_00006",
+            "scene_00007"
+        ]
+    },
+    "real_captured_scene": {
+        "data_root": "/path/to/DTC-MultiLight-2DEval/real_scenes",
+        "scenes": [
+            "scene_00000",
+            "scene_00001"
+        ]
+    }
+}
