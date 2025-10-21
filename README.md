@@ -141,7 +141,7 @@ The data processing scripts are located in `./utils/preprocess`. The functions o
 - `color_projection.py`: Obtain the **DTC-MultiLight-3DEval** data by projecting the **DTC-MultiLight-2DEval** data through depth and applying Hilbert curve transformation.
 
 ## Contact
-- Kerui Ren: renkerui@sjtu.eud.cn
+- Kerui Ren: renkerui@sjtu.edu.cn
 
 ## Citation
 
