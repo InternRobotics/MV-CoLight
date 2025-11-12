@@ -14,9 +14,6 @@ C0 = 0.28209479177387814
 def SH2RGB(sh):
     return sh * C0 + 0.5
 
-DATA_DIR = "/cpfs01/shared/IDC_yumulin_group/renkerui/DTC-MultiLight-New-3D/256x256"
-OUTPUT_DIR = "/cpfs01/shared/IDC_yumulin_group/renkerui/DTC-MultiLight-New-3D/256x256"
-
 def hilbert_curve_2d(order, x0, y0, xi, xj, yi, yj, points):
     if order == 0:
         x = x0 + (xi + yi) / 2
@@ -70,11 +67,11 @@ def convert_ply(path, hilbert, order):
     
     return feat
 
-# ROOT_PATH = "/cpfs01/shared/IDC_yumulin_group/renkerui/Fintune-Data-512/3D/"
-# for scene in tqdm(sorted(os.listdir(ROOT_PATH))):
-#     point_cloud_path = os.path.join(ROOT_PATH, scene, "composite_scene/gs/point_cloud/iteration_10000/point_cloud.ply")
-#     order = 9
-#     hilbert = []
-#     hilbert_curve_2d(order, 0, 0, 2 ** order, 0, 0, 2 ** order, hilbert)
-#     feat = convert_ply(point_cloud_path, hilbert, order)
-#     np.save(os.path.join(ROOT_PATH, scene, "gs.npy"), feat)
+ROOT_PATH = "/path/to/DTC-MultiLight3D"
+for scene in tqdm(sorted(os.listdir(ROOT_PATH))):
+    point_cloud_path = os.path.join(ROOT_PATH, scene, "composite_scene/gs/point_cloud/iteration_10000/point_cloud.ply")
+    order = 9
+    hilbert = []
+    hilbert_curve_2d(order, 0, 0, 2 ** order, 0, 0, 2 ** order, hilbert)
+    feat = convert_ply(point_cloud_path, hilbert, order)
+    np.save(os.path.join(ROOT_PATH, scene, "gs.npy"), feat)
