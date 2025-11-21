@@ -14,7 +14,7 @@ model:
   type: SwinT2D
   img_size: 256
   patch_size: 16
-  embed_dim: 192
+  embed_dim: 96
   depths: [6, 6, 6]
   num_heads: [6, 6, 6]
   window_size: 8
